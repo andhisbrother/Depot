@@ -111,6 +111,10 @@
   margin-right: 2em;
 }
 
+#store .entry form, #store .entry form div {
+  display: inline;
+}
+
 /* Styly pro hlavní stránku */
 
 #banner {
@@ -148,6 +152,11 @@
 }
 
 #side a {
+  color: #bfb;
+  font-size: small;
+}
+
+#side p {
   color: #bfb;
   font-size: small;
 }
