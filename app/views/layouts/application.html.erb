@@ -1,14 +1,27 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>                                           <!-- řádek 1 -->
 <html>
 <head>
-  <title>Depot</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
+  <title>Internetové knihkupectví Pragprog</title>
+  <%= stylesheet_link_tag "scaffold" %>                   <!-- řádek 5 -->
+  <%= stylesheet_link_tag "depot", :media => "all" %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
 </head>
-<body>
-
-<%= yield %>
-
+<body id="store" >                                        <!-- řádek 10 -->
+  <div id="banner" >
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatická knihovna" %>
+  </div>
+  <div id="columns" >                                     <!-- řádek 15 -->
+    <div id="side" >
+      <a href="http://www...." >Úvod</a><br />
+      <a href="http://www..../faq" >Otázky</a><br />
+      <a href="http://www..../news" >Novinky</a><br />
+      <a href="http://www..../contact" >Kontakt</a><br /> <!-- řádek 20 -->
+    </div>
+    <div id="main" >
+      <%= yield %>
+    </div>
+  </div>                                                  <!-- řádek 25 -->
 </body>
 </html>
