@@ -1,11 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="cart_title" >Nákupní košík</div>
+<table>
+  <% @cart.line_items.each do |item| %>
+    <tr>
+      <td><%= item.quantity %>&times;</td>
+      <td><%= item.product.title %></td>
+      <td class="item_price" >
+        <%= number_to_currency(item.total_price, :locale => :cs) %>
+      </td>
+      <td><%= button_to 'Vymazat polozku', item, :method => :delete,
+              :confirm => 'Naozaj vymazat?' %></td>
+    </tr>
+  <% end %>
 
-<h2>Nakupny kosik</h2>
-<ul>
-	<% @cart.line_items.each do |item| %>
-	<li><%= item.product.title %></li>
-	<% end %>
-</ul>
+  <tr class="total_line" >
+    <td colspan="2" >Celkem</td>
+    <td class="total_cell" >
+      <%= number_to_currency(@cart.total_price, :locale => :cs) %>
+    </td>
+  </tr>
+</table>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+<%= button_to 'Vyprázdnit košík', @cart, :method => :delete,
+              :confirm => 'Naozaj vyprázdnit?' %>

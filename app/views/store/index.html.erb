@@ -3,7 +3,7 @@
 <% end %>
 
 <h1>Seznam produktů</h1>
-<%= @count %><span> krat</span>
+
 <% @products.each do |product| %>
   <div class="entry" >
     <%= link_to image_tag(product.image_url), line_items_path(:product_id => product), :method => :post %>
