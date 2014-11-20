@@ -1,4 +1,6 @@
 ﻿class CartsController < ApplicationController
+  before_action :time_date
+  
   # GET /carts
   # GET /carts.xml
   def index
@@ -13,6 +15,7 @@
   # GET /carts/1
   # GET /carts/1.xml
   def show
+
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound

@@ -19,10 +19,10 @@
       <a href="http://www..../news" >Novinky</a><br />
       <a href="http://www..../contact" >Kontakt</a><br />
       <p>Aktuálny čas: </br>
-      	<%= Time.now.strftime("%H:%M") %></p>
+      	<%= @time %></p>
       <p>Dnes je: </br>
-      	<%= Time.now.strftime("%e %B, %Y") %></p>
-        <span><%= @count %> krat</span>
+      	<%= @date %></p>
+        <span><%= @count %></span>
     </div>
     <div id="main" >
       <%= yield %>
