@@ -24,8 +24,6 @@ class ApplicationController < ActionController::Base
         if session[:counter] > 5
           [session[:counter], "krat"].join(" ")
         end
-    end
-
-    
+    end    
     
 end

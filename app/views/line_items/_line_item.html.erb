@@ -1,9 +1,14 @@
+<% if line_item == @curent_item %>
+	<tr id="current_item">
+<% else %>
+	<tr>
+<% end %>
 <tr>
 	<td><%= line_item.quantity %>&times;</td>
   <td><%= line_item.product.title %></td>
   <td class="item_price" >
-    <%= number_to_currency(line_item.total_price, :locale => :cs) %>
+    <%= number_to_currency(line_item.total_price, locale: :cs) %>
   </td>
-  <td><%= button_to 'Vymazat polozku', line_item, :method => :delete,
-              :confirm => 'Naozaj vymazat?' %></td>
+  <td><%= button_to 'Vymazat polozku', line_item, method: :delete,
+              data: {confirm: 'Naozaj vymazat?'} %></td>
 </tr>

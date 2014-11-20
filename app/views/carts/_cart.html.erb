@@ -5,10 +5,10 @@
   <tr class="total_line" >
     <td colspan="2" >Celkem</td>
     <td class="total_cell" >
-      <%= number_to_currency(cart.total_price, :locale => :cs) %>
+      <%= number_to_currency(cart.total_price, locale: :cs) %>
     </td>
   </tr>
 </table>
 
-<%= button_to 'Vyprázdnit košík', cart, :method => :delete,
-              :confirm => 'Naozaj vyprázdnit?' %>
+<%= button_to 'Vyprázdnit košík', cart, method: :delete,
+              data: { confirm: 'Naozaj vyprázdnit?'} %>
