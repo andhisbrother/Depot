@@ -6,4 +6,5 @@ class StoreController < ApplicationController
   	@cart = current_cart
   	@count = increment_count
   end
+
 end
