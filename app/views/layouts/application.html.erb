@@ -15,7 +15,9 @@
   <div id="columns" >                                     <!-- řádek 15 -->
     <div id="side" >
       <div id="cart">
-        <%= render(@cart) %>
+        <% if @cart %>
+          <%= render(@cart) %>
+        <% end %>
       </div>
       <a href="http://www...." >Úvod</a><br />
       <a href="http://www..../faq" >Otázky</a><br />
